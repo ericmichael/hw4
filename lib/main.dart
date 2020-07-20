@@ -27,9 +27,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  bool task1 = false;
-  bool task2 = false;
-  bool task3 = false;
+  List<String> taskTitles = [
+    'Understand Code',
+    'Figure out duplication',
+    'Refactor',
+    'Add comments',
+    'commit code',
+    'push to github',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,19 +44,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Your Tasks'),
       ),
       body: Container(
-        color: Colors.teal,
-        child: ListView(children: <Widget>[
-          Task(
-            title: 'Understand Code',
-          ),
-          Task(
-            title: 'Figure out duplication',
-          ),
-          Task(
-            title: 'Refactor',
-          ),
-        ]),
-      ),
+          color: Colors.teal,
+          child: ListView.builder(
+              itemCount: taskTitles.length,
+              itemBuilder: (context, index) {
+                return Task(
+                  title: taskTitles[index],
+                );
+              })),
     );
   }
 }
