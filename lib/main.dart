@@ -39,59 +39,47 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         color: Colors.teal,
-        child: ListView(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                child: CheckboxListTile(
-                  value: task1,
-                  onChanged: (newValue) {
-                    setState(() {
-                      task1 = newValue;
-                    });
-                  },
-                  activeColor: Colors.teal,
-                  title:
-                      Text('Understand Code', style: TextStyle(fontSize: 20)),
-                  controlAffinity: ListTileControlAffinity.leading,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                child: CheckboxListTile(
-                  value: task2,
-                  onChanged: (newValue) {
-                    setState(() {
-                      task2 = newValue;
-                    });
-                  },
-                  activeColor: Colors.teal,
-                  title: Text('Figure out duplication',
-                      style: TextStyle(fontSize: 20)),
-                  controlAffinity: ListTileControlAffinity.leading,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                child: CheckboxListTile(
-                  value: task3,
-                  onChanged: (newValue) {
-                    setState(() {
-                      task3 = newValue;
-                    });
-                  },
-                  activeColor: Colors.teal,
-                  title: Text('Refactor', style: TextStyle(fontSize: 20)),
-                  controlAffinity: ListTileControlAffinity.leading,
-                ),
-              ),
-            ),
-          ],
+        child: ListView(children: <Widget>[
+          Task(
+            title: 'Understand Code',
+          ),
+          Task(
+            title: 'Figure out duplication',
+          ),
+          Task(
+            title: 'Refactor',
+          ),
+        ]),
+      ),
+    );
+  }
+}
+
+class Task extends StatefulWidget {
+  String title;
+  Task({this.title});
+
+  @override
+  _TaskState createState() => _TaskState();
+}
+
+class _TaskState extends State<Task> {
+  bool checked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+        child: CheckboxListTile(
+          value: checked,
+          onChanged: (newValue) {
+            setState(() {
+              checked = newValue;
+            });
+          },
+          activeColor: Colors.teal,
+          title: Text(super.widget.title, style: TextStyle(fontSize: 20)),
+          controlAffinity: ListTileControlAffinity.leading,
         ),
       ),
     );
