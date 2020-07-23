@@ -36,6 +36,15 @@ class _MyHomePageState extends State<MyHomePage> {
     'push to github',
   ];
 
+  List<bool> taskStates = [
+    true,
+    false,
+    true,
+    false,
+    false,
+    false,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,44 +53,48 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Your Tasks'),
       ),
       body: Container(
-          color: Colors.teal,
-          child: ListView.builder(
-              itemCount: taskTitles.length,
-              itemBuilder: (context, index) {
-                return Task(
-                  title: taskTitles[index],
-                );
-              })),
-    );
-  }
-}
-
-class Task extends StatefulWidget {
-  String title;
-  Task({this.title});
-
-  @override
-  _TaskState createState() => _TaskState();
-}
-
-class _TaskState extends State<Task> {
-  bool checked = false;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
-        child: CheckboxListTile(
-          value: checked,
-          onChanged: (newValue) {
-            setState(() {
-              checked = newValue;
-            });
-          },
-          activeColor: Colors.teal,
-          title: Text(super.widget.title, style: TextStyle(fontSize: 20)),
-          controlAffinity: ListTileControlAffinity.leading,
-        ),
+        color: Colors.teal,
+        child: ListView(children: <Widget>[
+          Card(
+            child: CheckboxListTile(
+              value: taskStates[0],
+              onChanged: (newValue) {
+                setState(() {
+                  taskStates[0] = newValue;
+                });
+              },
+              activeColor: Colors.teal,
+              title: Text(taskTitles[0], style: TextStyle(fontSize: 20)),
+              controlAffinity: ListTileControlAffinity.leading,
+            ),
+          ),
+          Card(
+            child: CheckboxListTile(
+              value: taskStates[1],
+              onChanged: (newValue) {
+                setState(() {
+                  taskStates[1] = newValue;
+                });
+              },
+              activeColor: Colors.teal,
+              title: Text(taskTitles[1], style: TextStyle(fontSize: 20)),
+              controlAffinity: ListTileControlAffinity.leading,
+            ),
+          ),
+          Card(
+            child: CheckboxListTile(
+              value: taskStates[2],
+              onChanged: (newValue) {
+                setState(() {
+                  taskStates[2] = newValue;
+                });
+              },
+              activeColor: Colors.teal,
+              title: Text(taskTitles[2], style: TextStyle(fontSize: 20)),
+              controlAffinity: ListTileControlAffinity.leading,
+            ),
+          ),
+        ]),
       ),
     );
   }

@@ -1,16 +1,34 @@
 # hw4
 
-A new Flutter project.
+For this homework you will need to refactor some code.
 
-## Getting Started
+The app is a simple task list. However, the task widgets have been copied and pasted :( with small modifications to each.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+<img src="" width="40%">
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+You first will need to refactor out the task widget into a class. This class should take in the title and the initial state (checked/unchecked) of the task. 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+
+Task(
+    title: 'clean room',
+    checked: false,
+)
+
+```
+
+
+After refactoring the Task Widget replace the [ListView](https://api.flutter.dev/flutter/widgets/ListView-class.html) to use [ListView.builder()](https://flutter.dev/docs/cookbook/lists/long-lists) to dynamically make tasks.
+
+Two arrays have been provided **taskTitles** and **taskStates** they  hold the title and inital state of each task.
+You will need to used this arrays in the [ListView.builder()](https://flutter.dev/docs/cookbook/lists/long-lists) to generate the tasks.
+
+```dart
+
+Task(
+    title: taskTitles[index],
+    checked: tasksState[index],
+)
+
+```
