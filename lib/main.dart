@@ -54,9 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         color: Colors.teal,
-                // REFACTOR INTO ListView.builder
+        // REFACTOR INTO ListView.builder
         child: ListView(children: <Widget>[
-          // REFACTOR OUT INTO STATEFUL TASK WIDGET
+          // REFACTOR OUT INTO STATEFUL TASKs WIDGET
           Card(
             child: CheckboxListTile(
               value: taskStates[0],
@@ -66,7 +66,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               activeColor: Colors.teal,
-              title: Text(taskTitles[0], style: TextStyle(fontSize: 20)),
+              title: Text(taskTitles[0],
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle:
+                        taskStates[0] ? FontStyle.italic : FontStyle.normal,
+                    color: taskStates[0] ? Colors.grey : Colors.black,
+                  )),
               controlAffinity: ListTileControlAffinity.leading,
             ),
           ),
@@ -79,7 +85,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               activeColor: Colors.teal,
-              title: Text(taskTitles[1], style: TextStyle(fontSize: 20)),
+              title: Text(taskTitles[1],
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle:
+                        taskStates[1] ? FontStyle.italic : FontStyle.normal,
+                    color: taskStates[1] ? Colors.grey : Colors.black,
+                  )),
               controlAffinity: ListTileControlAffinity.leading,
             ),
           ),
@@ -92,7 +104,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               activeColor: Colors.teal,
-              title: Text(taskTitles[2], style: TextStyle(fontSize: 20)),
+              title: Text(taskTitles[2],
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle:
+                        taskStates[2] ? FontStyle.italic : FontStyle.normal,
+                    color: taskStates[2] ? Colors.grey : Colors.black,
+                  )),
               controlAffinity: ListTileControlAffinity.leading,
             ),
           ),
