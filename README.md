@@ -6,6 +6,7 @@ The app is a simple task list. However, the task widgets have been copied and pa
 
 
 <img src="https://github.com/bry02g/hw4/blob/master/screenshots/intial_app.png" width="40%">
+**initial screenshot of app**
 
 You first will need to refactor out the task widget into a class. This class should take in the title and the initial state (checked/unchecked) of the task. 
 
@@ -35,3 +36,4 @@ Task(
 
 
 <img src="https://github.com/bry02g/hw4/blob/master/screenshots/final_result.png" width="40%">
+**end result with app using listview.builder to generate all the task in the array**
