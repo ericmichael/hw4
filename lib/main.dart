@@ -54,7 +54,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         color: Colors.teal,
+                // REFACTOR INTO ListView.builder
         child: ListView(children: <Widget>[
+          // REFACTOR OUT INTO STATEFUL TASK WIDGET
           Card(
             child: CheckboxListTile(
               value: taskStates[0],
