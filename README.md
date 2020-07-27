@@ -46,9 +46,7 @@ When dealing with Stateful Widgets, let's say you have a Stateful Widget called 
 
 To access variables in the Task class, use `widget.whatever` in the _TaskState class. 
 
-```
-}
-
+```dart
 class Task extends StatefulWidget {
   String whatever;
 
@@ -67,3 +65,4 @@ class _TaskState extends State<Task> {
 
 
 ```
+
