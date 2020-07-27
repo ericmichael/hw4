@@ -39,3 +39,31 @@ Task(
 <img src="https://github.com/bry02g/hw4/blob/master/screenshots/final_result.png" width="40%">
 
 **end result with app using listview.builder to generate all the task in the array**
+
+# Hint:
+
+When dealing with Stateful Widgets, let's say you have a Stateful Widget called Task and you pass information to it via the constructor.
+
+To access variables in the Task class, use `widget.whatever` in the _TaskState class. 
+
+```
+}
+
+class Task extends StatefulWidget {
+  String whatever;
+
+  Task(this.whatever);
+  
+  @override
+  _TaskState createState() => _TaskState();
+}
+
+class _TaskState extends State<Task> {
+  @override
+  Widget build(BuildContext context) {
+    return Text(widget.whatever);
+  }
+}
+
+
+```
