@@ -5,7 +5,7 @@ For this homework you will need to refactor some code.
 The app is a simple task list. However, the task widgets have been copied and pasted :( with small modifications to each.
 
 
-<img src="https://github.com/bry02g/hw4/blob/master/screenshots/initial_app.png" width="40%">
+<img src="https://github.com/ericmichael/hw4/blob/master/screenshots/initial_app.png" width="40%">
 
 **initial screenshot of app with 3 hardcoded tasks**
 
@@ -36,7 +36,7 @@ Task(
 ```
 
 
-<img src="https://github.com/bry02g/hw4/blob/master/screenshots/final_result.png" width="40%">
+<img src="https://github.com/ericmichael/hw4/blob/master/screenshots/final_result.png" width="40%">
 
 **end result with app using listview.builder to generate all the task in the array**
 
